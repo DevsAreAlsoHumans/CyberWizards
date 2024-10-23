@@ -4,7 +4,7 @@
 - **Architecture claire**
 - **Séparation des responsabilités dans des fonctions**
 - **Code propre (documenter le code de manière concise, pas de variable non utilisée)**
-- **Bonne conduite : respect de vos camarades, de vos chefs de projet et de la bonne séance**
+- **Bonne conduite : respect de vos camarades, de vos chefs de projet et respect des règles de bienséance**
 
 ---
 
