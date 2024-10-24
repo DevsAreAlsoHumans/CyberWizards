@@ -1,10 +1,16 @@
-### Règle du hackathon
-- **Pas d'utilisation d'IA (chaptgpt, gemini, etc...) mais les recherches Google autorisé (StackOverflow, php.net, etc...)**
-- **Bonnes pratiques : règle de nommage, clareté du code...**
-- **Architecture claire**
-- **Séparation des responsabilités dans des fonctions**
-- **Code propre (documenter le code de manière concise, pas de variable non utilisée)**
-- **Bonne conduite : respect de vos camarades, de vos chefs de projet et de la bonne séance**
+### Règles du Hackathon
+
+1. **Interdiction formelle de l'utilisation d'IA générative (ex : ChatGPT, Gemini, etc.)**  
+   L’utilisation d’outils d'intelligence artificielle générative est **strictement interdite**. Si vous en faites usage, **vous serez disqualifié**, et **votre équipe entière sera pénalisée** par une réduction de points, ce qui affectera fortement votre score final. Les recherches sur Google, StackOverflow, php.net, etc., sont autorisées.
+
+2. **Respect des bonnes pratiques de développement**  
+   - **Langages et outils** : Tout le code doit être développé en **PHP** avec **MySQL** pour la gestion des bases de données. Les interfaces utilisateur doivent être construites en **HTML/CSS**, et le tout doit être **versionné sur GitHub**. Le dépôt doit être bien structuré et suivre les conventions de versionnement.
+   - **Code propre et lisible** : Adoptez des conventions de nommage cohérentes pour vos fonctions et variables, afin de garantir une **clarté du code**. Le code doit être simple à comprendre et à maintenir, bien organisé, et exempt d’éléments inutiles. Utilisez des commentaires uniquement lorsque cela est nécessaire pour expliquer des choix techniques particuliers. Votre code doit être lisible par n'importe quel développeur qui le lira.
+   - **Conception fonctionnelle** : Tout le développement doit être réalisé en **programmation fonctionnelle**, sans recours à des classes ou à l'orientation objet (pas de modèle MVC). Structurez le projet en fonctions claires et distinctes pour chaque responsabilité.
+
+3. **Comportement professionnel et respectueux**  
+   - **Collaboration et respect** : Le travail en équipe est primordial. Respectez les idées et contributions de chacun, ainsi que les consignes des chefs de projet. Soyez attentif à vos coéquipiers et communiquez de manière claire et constructive.
+   - **Ambiance de travail** : Maintenez un environnement de travail sain et agréable. Le respect des autres participants et des règles est essentiel pour garantir une bonne expérience à tous.
 
 - **Notation sur 100 points remis /20**
 
