@@ -24,19 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date_de_naissance = htmlspecialchars(trim($_POST['date_de_naissance']));
     $mot_de_passe = htmlspecialchars(trim($_POST['mot_de_passe']));  
     
-    /// Validation des donnéées
+    /// Validation des donnéees
     if (empty($nom)) {
         echo "Le nom est obligatoire.";
-    } elseif (empty($prenom)) {
-        echo "Le prenom est obligatoire.";
-        elseif (empty($email)) {
-            echo "L'email est obligatoire.";
+    } elseif (empty($email)) {
+        echo "L'email est obligatoire.";
     } elseif (strlen($mot_de_passe) < 6) {  
         echo "Le mot de passe doit contenir au moins 6 caractères.";
     } elseif (!DateTime::createFromFormat('Y-m-d', $date_de_naissance)) {
         echo "La date de naissance doit être au format YYYY-MM-DD.";
     } else {
-        /// Hachage du mot de passe 
+        /// Hachage du mot de passe avant l'insertion dans la base de données
         $mot_de_passe_hache = password_hash($mot_de_passe, PASSWORD_DEFAULT);
 
         /// Préparation de la requête d'insertion
