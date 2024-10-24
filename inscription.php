@@ -18,18 +18,21 @@ try {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /// Récupérer et filtrer les données
-    $lastName = htmlspecialchars(trim($_POST['nom']));
-    $firstName = htmlspecialchars(trim($_POST['prenom']));
+    $lastName = htmlspecialchars(trim($_POST['lastname'])); 
+    $firstName = htmlspecialchars(trim($_POST['firstname'])); 
     $email = htmlspecialchars(trim($_POST['email']));
-    $birthDate = htmlspecialchars(trim($_POST['date_de_naissance']));
-    $password = htmlspecialchars(trim($_POST['mot_de_passe']));  
+    $birthDate = htmlspecialchars(trim($_POST['birthDate'])); 
+    $password = htmlspecialchars(trim($_POST['password'])); 
     
     /// Validation 
     if (empty($lastName)) {
         echo "Le nom est obligatoire.";
-    } elseif (empty($email)) {
-        echo "L'email est obligatoire.";
-    } elseif (strlen($password) < 6) {  
+    } 
+    /// Vérifiez si l'e-mail est déjà utilisé
+    elseif ($cnx->query("SELECT * FROM users WHERE email = '$email'")->rowCount() > 0) {
+        echo "Cet e-mail est déjà utilisé.";
+    } 
+    elseif (strlen($password) < 6) {  
         echo "Le mot de passe doit contenir au moins 6 caractères.";
     } elseif (!DateTime::createFromFormat('Y-m-d', $birthDate)) {
         echo "La date de naissance doit être au format YYYY-MM-DD.";
@@ -38,17 +41,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         /// Préparation de la requête d'insertion
-        $sql = "INSERT INTO users (nom, prenom, date_de_naissance, email, mot_de_passe) 
-                VALUES (:nom, :prenom, :date_de_naissance, :email, :mot_de_passe)";
+        $sql = "INSERT INTO users (last_name, first_name, date_of_birth, email, password) 
+                VALUES (:last_name, :first_name, :date_of_birth, :email, :password)";
         $stmt = $cnx->prepare($sql);
 
         /// Exécution de la requête avec les données de l'utilisateur
         $stmt->execute([
-            ':nom' => $lastName,
-            ':prenom' => $firstName,
-            ':date_de_naissance' => $birthDate,
+            ':last_name' => $lastName,
+            ':first_name' => $firstName,
+            ':date_of_birth' => $birthDate,
             ':email' => $email,
-            ':mot_de_passe' => $hashedPassword
+            ':password' => $hashedPassword
         ]);
     }
 }
