@@ -62,4 +62,23 @@ function assignRoleToUser($userId, $roleId) {
     ]);
 }
 
+function checkEmail($email)
+{
+    $pdo = getDbConnection();
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+
 
