@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 24 Octobre 2024 à 11:54
+-- Généré le :  Jeu 24 Octobre 2024 à 14:12
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -56,7 +56,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 CREATE TABLE IF NOT EXISTS `user_roles` (
-  `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_role` int(11) NOT NULL,
   PRIMARY KEY (`id_user`,`id_role`),
