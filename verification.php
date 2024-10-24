@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (isset($_POST['email']) && isset($_POST['password'])) {
-    $db_name = "doranco_hackaton";
+    $db_name = "hackaton";
     $db_host = "localhost";
     $db_username = "root";
-    $db_password = "root";
+    $db_password = "";
     $db = mysqli_connect($db_host, $db_username, $db_password, $db_name)
     or die('could not connect to database');
 
@@ -15,24 +15,23 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     );
 
     if ($email !== "" || $password !== "") {
-        $requete = "SELECT count(*) FROM users where email = '".$email."'and password = '".password_hash($password, PASSWORD_DEFAULT)."' ";
+        $requete = "SELECT password FROM users where email = '".$email."'";
         $exec_requete = mysqli_query($db, $requete);
-        $reponse = mysqli_fetch_array($exec_requete);
-        $count = $reponse['count(*)'];
-        if ($count != 0) {
+        $response = mysqli_fetch_array($exec_requete);
+
+        if (password_verify($password, $response[0])) {
             setcookie("user_email", $email);
 
-            header('Location: home.php');
+            header('Location: index.php');
         } else {
-            header('Location: home.php?erreur=1');
+            header('Location: index.php?erreur=1');
         }
     } else {
-        header('Location: home.php?erreur=2');
+        header('Location: index.php?erreur=2');
     }
 } else {
-    header('Location: home.php');
+    header('Location: index.php');
 }
 mysqli_close($db);
 ?>
-
 
