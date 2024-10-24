@@ -1,5 +1,5 @@
 body{
-    background: #fdf2b5;
+    background: #fee6e3;
    }
    #container{
     width:400px;
@@ -41,8 +41,10 @@ body{
         align-items: center
     }
     #grosTitre h2{
-        font-size : 48px;
-        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: weight;
+        font-style: normal;
     }
     #button-56 button{
         align-items: center;

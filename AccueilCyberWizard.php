@@ -3,6 +3,9 @@
     <head>
         <title>CyberWizard</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div id = "champsAccueil">
@@ -10,7 +13,7 @@
                 <h2>Bienvenue sur Cyber Wizard</h2>
             </div>
             <?php
-                if( isset($_COOKIE["coo"]))
+                if( isset($_COOKIE["user_email"]))
                 echo "Vous êtes connecté ";
                 else 
                 echo "<div id = 'duoBouton'>
