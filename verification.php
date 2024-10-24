@@ -19,8 +19,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $exec_requete = mysqli_query($db, $requete);
         $reponse = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
-        var_dump($count);
-        die();
+       
         setcookie('coo',password_hash("test", PASSWORD_DEFAULT));
         
         if ($count != 0) {
