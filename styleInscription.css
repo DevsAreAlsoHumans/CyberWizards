@@ -37,7 +37,7 @@ body {
     
     form div > input, form div > select, form div > textarea {
     background: #fff;
-    color: white;
+    color: rgb(8, 8, 8);
     border: none;
     border-radius: 5px;
     font-size: 16px;
