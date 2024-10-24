@@ -1,3 +1,7 @@
+## Lien Trello
+
+https://trello.com/b/37HloEKw/hackthon-1-groupe-thibault-jeremy
+
 ### Règles du Hackathon
 
 1. **Interdiction formelle de l'utilisation d'IA générative (ex : ChatGPT, Gemini, etc.)**  
