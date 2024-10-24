@@ -4,11 +4,13 @@
 - **Architecture claire**
 - **Séparation des responsabilités dans des fonctions**
 - **Code propre (documenter le code de manière concise, pas de variable non utilisée)**
-- **Bonne conduite : respect de vos camarades, de vos chefs de projet et respect des règles de bienséance**
+- **Bonne conduite : respect de vos camarades, de vos chefs de projet et de la bonne séance**
+
+- **Notation sur 100 points remis /20**
 
 ---
 
-### **1ère Itération (10 points) : Système de gestion d'utilisateur**
+### **1ère Itération (20 points) : Système de gestion d'utilisateur**
 
 #### User stories :
 - **En tant qu'utilisateur, je veux m'inscrire pour pouvoir créer un compte sur la plateforme.**
@@ -25,13 +27,13 @@
 #### Structure des tables :
 - **Table users** : `id`, `nom`, `prenom`, `date_de_naissance`,  `email`, `mot_de_passe`
 
-#### Critères de notation (10 points) :
-- Inscription et connexion fonctionnelles (6 points).
-- Hashage des mots de passe (4 points).
+#### Critères de notation (20 points) :
+- Inscription et connexion fonctionnelles (12 points).
+- Hashage des mots de passe (8 points).
 
 ---
 
-### **2ème Itération (15 points) : Gestion des rôles, compte utilisateur et sécurité renforcée**
+### **2ème Itération (40 points) : Gestion des rôles, compte utilisateur et sécurité renforcée**
 
 #### User stories :
 - **En tant qu'utilisateur, je veux pouvoir avoir un ou plusieurs rôles attribués afin de gérer mes permissions.**
@@ -58,16 +60,16 @@
 - **Table user_roles** : `user_id` (clé étrangère vers `users`), `role_id` (clé étrangère vers `roles`)
 
 
-#### Critères de notation (15 points) :
-- Fonctionnalités de la première itération (6 points).
+#### Critères de notation (40 points) :
+- Fonctionnalités de la première itération (20 points).
 - Gestion des rôles avec table de liaison `user_roles` (5 points).
-- Requêtes préparées (2 points).
-- Suppression de compte (1 point).
-- Affichage de la liste des utilisateurs (1 point).
+- Requêtes préparées (8 points).
+- Suppression de compte (5 point).
+- Affichage de la liste des utilisateurs (2 point).
 
 ---
 
-### **3ème Itération (20 points) : Gestion des permissions et sécurité avancée**
+### **3ème Itération (60 points) : Gestion des permissions et sécurité avancée**
 
 #### User stories :
 - **En tant qu'administrateur, je veux pouvoir attribuer des rôles aux utilisateurs afin de mieux contrôler l'accès aux fonctionnalités.**
@@ -87,15 +89,15 @@
 - **Table permissions** : `id`, `nom_permission` (ex : gérer_utilisateurs, modifier_contenu)
 - **Table role_permissions** : `role_id` (clé étrangère vers `roles`), `permission_id` (clé étrangère vers `permissions`)
 
-#### Critères de notation (20 points) :
-- Fonctionnalités des itérations précédentes (10 points).
+#### Critères de notation (60 points) :
+- Fonctionnalités des itérations précédentes (40 points).
 - Gestion des permissions avec table de liaison `role_permissions` (5 points).
-- Validation via Regex (3 points).
-- Protection CSRF (2 points).
+- Validation via Regex (8 points).
+- Protection CSRF (7 points).
 
 ---
 
-### **4ème Itération (25 points) : Suspension de comptes, SMTP et reset de mot de passe**
+### **4ème Itération (80 points) : Suspension de comptes, SMTP et reset de mot de passe**
 
 #### User stories :
 - **En tant qu'administrateur, je veux pouvoir suspendre ou réactiver les comptes des utilisateurs.**
@@ -126,17 +128,17 @@
 - **Table users (mise à jour)** : Ajout d'une colonne `status` (`active`, `suspended`) pour gérer l'état des comptes.
 - **Table password_resets** : `id`, `user_id`, `reset_token`, `expires_at`
 
-#### Critères de notation (25 points) :
-- Fonctionnalités des itérations précédentes (10 points).
+#### Critères de notation (80 points) :
+- Fonctionnalités des itérations précédentes (60 points).
 - Suspension et réactivation des comptes (5 points).
-- Implémentation du système SMTP et envoi d'emails (5 points).
-- Système d'ajout d'image de profil (1 point).
+- Implémentation du système SMTP et envoi d'emails (7 points).
+- Système d'ajout d'image de profil (2 point).
 - Système de réinitialisation de mot de passe (3 points).
-- Système d'audit des actions (2 points).
+- Système d'audit des actions (3 points).
 
 ---
 
-### **5ème Itération (30 points) : Mur social pour la publication de contenu (texte/images) et modération**
+### **5ème Itération (90 points) : Mur social pour la publication de contenu (texte/images) et modération**
 
 #### User stories :
 - **En tant qu'utilisateur, je veux pouvoir publier des textes ou des images sur un mur partagé afin de communiquer avec les autres utilisateurs.**
@@ -169,15 +171,15 @@
 - **Table reported_posts** (pour signaler des publications) :
   - `id`, `post_id` (clé étrangère vers `posts`), `user_id` (utilisateur ayant signalé), `reason` (motif du signalement), `created_at` (horodatage).
 
-#### Critères de notation (30 points) :
-- **Fonctionnalités des itérations précédentes** (10 points).
-- **Publication et gestion des contenus (texte/images)** (10 points).
-- **Modération des publications par l'administrateur** (5 points).
-- **Modification et suppression des publications par les utilisateurs** (5 points).
+#### Critères de notation (90 points) :
+- **Fonctionnalités des itérations précédentes** (80 points).
+- **Publication et gestion des contenus (texte/images)** (5 points).
+- **Modération des publications par l'administrateur** (3 points).
+- **Modification et suppression des publications par les utilisateurs** (2 points).
 
 ---
 
-### **6ème Itération (35 points) : Ajout des likes, commentaires et modération associée**
+### **6ème Itération (100 points) : Ajout des likes, commentaires et modération associée**
 
 #### User stories :
 - **En tant qu'utilisateur, je veux pouvoir liker les publications des autres utilisateurs pour montrer mon appréciation.**
@@ -225,11 +227,11 @@
 - **Table reported_likes** (pour signaler des likes) :
   - `id`, `like_id` (clé étrangère vers `likes`), `user_id` (utilisateur ayant signalé), `reason` (motif du signalement), `created_at`.
 
-#### Critères de notation (35 points) :
-- **Fonctionnalités des itérations précédentes** (10 points).
-- **Système de likes et gestion des interactions** (10 points).
-- **Commentaires avec possibilité de modification et suppression** (10 points).
-- **Modération des likes et des commentaires par l'administrateur** (5 points).
+#### Critères de notation (100 points) :
+- **Fonctionnalités des itérations précédentes** (90 points).
+- **Système de likes et gestion des interactions** (4 points).
+- **Commentaires avec possibilité de modification et suppression** (4 points).
+- **Modération des likes et des commentaires par l'administrateur** (2 points).
 
 
 ### Synthèse :
