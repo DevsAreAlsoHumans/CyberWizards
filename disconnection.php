@@ -13,7 +13,7 @@ if(array_key_exists('ButtonLogout', $_POST)) {
     ); 
 } 
     session_destroy(); 
-    header("Location: home.php"); 
+    header("Location: connexion.php"); 
     exit(); 
 }  
 ?>
