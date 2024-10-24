@@ -6,9 +6,16 @@
     <h1>Inscription</h1>
     <form action="/inscription.php" method="post">
     <div>
-    <label for="name">Nom</label>
-    <input type="text" id="name" name="name" placeholder="Nom" required>
+    <label for="lastname">Nom</label>
+    <input type="text" id="lastname" lastname="lastname" placeholder="Nom" required>
     </div>
+    <label for="firstname">Prénom</label>
+    <input type="text" id="firstname" firstname="firstname" placeholder="Prénom" required>
+    </div>
+    <div>
+        <label for="birthDate">Date de naissance</label>
+        <input type="birthDate" id="birthDate" name="birthDate" placeholder="01/01/2000" required>
+        </div>
     <div>
     <label for="email">E-mail</label>
     <input type="email" id="email" name="email" placeholder="monadresse@mail.com" required>
