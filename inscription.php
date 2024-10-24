@@ -54,7 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ':password' => $hashedPassword
         ]);
     }
+
+   header("Location: index.php");
+   exit();
 }
+
 
 
 ?>
