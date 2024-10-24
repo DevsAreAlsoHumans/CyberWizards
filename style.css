@@ -19,36 +19,16 @@ body{
     margin: 0 auto;
     padding-bottom: 10px;
    }
-   
-   /* Full-width inputs */
-   input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-   }
-   
-   /* Set a style for all buttons */
-   input[type=submit] {
-    background-color: #4e4303;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-   }
-   input[type=submit]:hover {
-    background-color: white;
-    color: #4e4303;
-    border: 1px solid #4e4303;
-   }
    #champsAccueil{
-    background-color: #ccc;
-    margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
-    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+        margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+        margin-left: 40vh;
+        transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+        width: 50%;
+        border-radius: 8px;
+        padding: 50px;
+        border: 2px solid #111;
+        background: #fff;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
    }
    #duoBouton{
         display: flex;
@@ -64,11 +44,66 @@ body{
         font-size : 48px;
         font-weight: bold;
     }
-    #btn1 {
-        font-size: 48px;
-        margin-right: 20px;
+    #button-56 button{
+        align-items: center;
+        background-color: #fee6e3;
+        border: 2px solid #111;
+        border-radius: 8px;
+        box-sizing: border-box;
+        color: #111;
+        cursor: pointer;
+        display: flex;
+        font-family: Inter,sans-serif;
+        font-size: 16px;
+        height: 48px;
+        justify-content: center;
+        line-height: 24px;
+        max-width: 100%;
+        padding: 0 25px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
     }
-    #btn2 {
-        font-size: 48px;
-        size: 40px;
+    
+    #button-56:after button{
+        background-color: #111;
+        border-radius: 8px;
+        content: "";
+        display: block;
+        height: 48px;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        top: -2px;
+        transform: translate(8px, 8px);
+        transition: transform .2s ease-out;
+        z-index: -1;
     }
+    
+    #button-56:hover:after button{
+        transform: translate(0, 0);
+    }
+    
+    #button-56:active button{
+        background-color: #ffdeda;
+        outline: 0;
+    }
+    
+    #button-56:hover button{
+        outline: 0;
+    }
+    
+    @media (min-width: 768px) {
+        #button-56 {
+        padding: 0 40px;
+        }
+    }
+
+    #button-56 a{
+        text-decoration: none;
+    }
+
+    

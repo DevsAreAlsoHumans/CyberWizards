@@ -10,12 +10,12 @@
                 <h2>Bienvenue sur Cyber Wizard</h2>
             </div>
             <?php
-                if( isset($_COOKIE["connexion"]))
+                if( isset($_COOKIE["coo"]))
                 echo "Vous êtes connecté ";
                 else 
                 echo "<div id = 'duoBouton'>
                 <p>
-                   <div id = 'btn1'><button><a href = './connexion.php'>Connexion</a></button></div> <div id = 'btn2'><button><a href = './inscription.php'>Inscription</a></button></div>
+                   <div id = 'button-56'><button><a href = './connexion.php'>Connexion</a></button></div> <div id = 'button-56'><button><a href = './inscription.php'>Inscription</a></button></div>
                 </p>
                 </div>"
             ?>
