@@ -15,9 +15,6 @@
    - **Collaboration et respect** : Le travail en équipe est primordial. Respectez les idées et contributions de chacun, ainsi que les consignes des chefs de projet. Soyez attentif à vos coéquipiers et communiquez de manière claire et constructive.
    - **Ambiance de travail** : Maintenez un environnement de travail sain et agréable. Le respect des autres participants et des règles est essentiel pour garantir une bonne expérience à tous.
 
-
-- **Notation sur 100 points remis /20**
-
 ---
 
 ### **1ère Itération (20 points) : Système de gestion d'utilisateur**
